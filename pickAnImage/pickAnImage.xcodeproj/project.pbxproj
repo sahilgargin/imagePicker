@@ -74,6 +74,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		387A1DC51C70F6B4002B6520 /* delegateLib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = delegateLib;
+			sourceTree = "<group>";
+		};
 		38A98B771C70D50200796FE2 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +104,7 @@
 		38A98B821C70D50200796FE2 /* pickAnImage */ = {
 			isa = PBXGroup;
 			children = (
+				387A1DC51C70F6B4002B6520 /* delegateLib */,
 				38A98B831C70D50200796FE2 /* AppDelegate.swift */,
 				38A98B851C70D50200796FE2 /* ViewController.swift */,
 				38A98B871C70D50200796FE2 /* Main.storyboard */,
@@ -482,6 +490,7 @@
 				38A98BAA1C70D50200796FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38A98BAB1C70D50200796FE2 /* Build configuration list for PBXNativeTarget "pickAnImageTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +499,7 @@
 				38A98BAD1C70D50200796FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38A98BAE1C70D50200796FE2 /* Build configuration list for PBXNativeTarget "pickAnImageUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +508,7 @@
 				38A98BB01C70D50200796FE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

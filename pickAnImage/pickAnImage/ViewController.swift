@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var bottomLabel: UITextField!
     @IBOutlet weak var topLabel: UITextField!
@@ -18,6 +18,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         topLabel.textAlignment = .Center
         bottomLabel.textAlignment = .Center
+        self.topLabel.delegate = self
+        self.bottomLabel.delegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -47,7 +49,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
+        print ("here")
         textField.text = ""
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
     }
 }
 
