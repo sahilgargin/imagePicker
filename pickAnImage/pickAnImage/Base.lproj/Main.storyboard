@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pickAnImage" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjZ-yK-u9H">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem title="Pick" id="8J0-IW-gVW">
+                                        <connections>
+                                            <action selector="pickFromHere:" destination="BYZ-38-t0r" id="gZV-af-bg1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yMa-nC-vIp">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yMa-nC-vIp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="3ff-hX-XK8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NjZ-yK-u9H" secondAttribute="trailing" constant="-20" id="7lW-fR-7Bi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yMa-nC-vIp" secondAttribute="trailing" constant="60" id="Dth-DI-heC"/>
+                            <constraint firstItem="yMa-nC-vIp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="Los-kP-J95"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NjZ-yK-u9H" secondAttribute="bottom" id="RPQ-eU-P4b"/>
+                            <constraint firstItem="NjZ-yK-u9H" firstAttribute="top" secondItem="yMa-nC-vIp" secondAttribute="bottom" constant="309" id="ZMS-J7-VfG"/>
+                            <constraint firstItem="NjZ-yK-u9H" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="b9f-wz-L1B"/>
+                            <constraint firstItem="NjZ-yK-u9H" firstAttribute="top" secondItem="yMa-nC-vIp" secondAttribute="bottom" constant="309" id="nEP-9R-MOT"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="NjZ-yK-u9H"/>
+                                <exclude reference="yMa-nC-vIp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="3ff-hX-XK8"/>
+                                <exclude reference="Dth-DI-heC"/>
+                                <exclude reference="Los-kP-J95"/>
+                                <exclude reference="7lW-fR-7Bi"/>
+                                <exclude reference="ZMS-J7-VfG"/>
+                                <exclude reference="b9f-wz-L1B"/>
+                                <exclude reference="nEP-9R-MOT"/>
+                                <exclude reference="RPQ-eU-P4b"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="NjZ-yK-u9H"/>
+                                <include reference="yMa-nC-vIp"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="3ff-hX-XK8"/>
+                                <include reference="Dth-DI-heC"/>
+                                <include reference="Los-kP-J95"/>
+                                <include reference="7lW-fR-7Bi"/>
+                                <include reference="ZMS-J7-VfG"/>
+                                <include reference="b9f-wz-L1B"/>
+                                <include reference="nEP-9R-MOT"/>
+                                <include reference="RPQ-eU-P4b"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="pickAnImage" destination="yMa-nC-vIp" id="LvA-kc-3Hk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="379.5" y="305"/>
+        </scene>
+    </scenes>
+</document>
