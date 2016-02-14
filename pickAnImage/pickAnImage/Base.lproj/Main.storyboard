@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,9 +22,14 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NjZ-yK-u9H">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem title="Pick" id="8J0-IW-gVW">
+                                    <barButtonItem title="Pick" width="198" id="8J0-IW-gVW">
                                         <connections>
                                             <action selector="pickFromHere:" destination="BYZ-38-t0r" id="gZV-af-bg1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Camera" id="NOE-63-IKx">
+                                        <connections>
+                                            <action selector="pickAnImageCamera:" destination="BYZ-38-t0r" id="jLL-wF-UnC"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -49,14 +55,14 @@
                                 <exclude reference="yMa-nC-vIp"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="3ff-hX-XK8"/>
-                                <exclude reference="Dth-DI-heC"/>
-                                <exclude reference="Los-kP-J95"/>
+                                <exclude reference="RPQ-eU-P4b"/>
                                 <exclude reference="7lW-fR-7Bi"/>
                                 <exclude reference="ZMS-J7-VfG"/>
                                 <exclude reference="b9f-wz-L1B"/>
                                 <exclude reference="nEP-9R-MOT"/>
-                                <exclude reference="RPQ-eU-P4b"/>
+                                <exclude reference="3ff-hX-XK8"/>
+                                <exclude reference="Dth-DI-heC"/>
+                                <exclude reference="Los-kP-J95"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -65,19 +71,20 @@
                                 <include reference="yMa-nC-vIp"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="3ff-hX-XK8"/>
-                                <include reference="Dth-DI-heC"/>
-                                <include reference="Los-kP-J95"/>
+                                <include reference="RPQ-eU-P4b"/>
                                 <include reference="7lW-fR-7Bi"/>
                                 <include reference="ZMS-J7-VfG"/>
                                 <include reference="b9f-wz-L1B"/>
                                 <include reference="nEP-9R-MOT"/>
-                                <include reference="RPQ-eU-P4b"/>
+                                <include reference="3ff-hX-XK8"/>
+                                <include reference="Dth-DI-heC"/>
+                                <include reference="Los-kP-J95"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="pickAnImage" destination="yMa-nC-vIp" id="LvA-kc-3Hk"/>
+                        <outlet property="pickCamera" destination="NOE-63-IKx" id="dN0-4D-T1w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
