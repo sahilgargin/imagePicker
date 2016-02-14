@@ -10,10 +10,14 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var bottomLabel: UITextField!
+    @IBOutlet weak var topLabel: UITextField!
     @IBOutlet weak var pickAnImage: UIImageView!
     @IBOutlet weak var pickCamera: UIBarButtonItem!
     override func viewDidLoad() {
         super.viewDidLoad()
+        topLabel.textAlignment = .Center
+        bottomLabel.textAlignment = .Center
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -40,6 +44,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
         presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        textField.text = ""
     }
 }
 
