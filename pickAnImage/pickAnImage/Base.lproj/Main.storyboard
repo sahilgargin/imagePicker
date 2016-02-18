@@ -43,7 +43,7 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nz1-qP-edJ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nz1-qP-edJ">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -54,7 +54,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="MemeMe" id="SOH-7f-6EC">
-                                        <barButtonItem key="leftBarButtonItem" title="Upload" id="sdS-ee-dSI"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Share" id="sdS-ee-dSI">
+                                            <connections>
+                                                <action selector="shareit:" destination="BYZ-38-t0r" id="y3s-WD-Zi8"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="N10-iQ-hAs"/>
                                     </navigationItem>
                                 </items>
@@ -92,26 +96,26 @@
                                 <exclude reference="FCh-r8-XXT"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="21H-gs-cwv"/>
-                                <exclude reference="QiT-zi-0rp"/>
-                                <exclude reference="lRO-wR-xLW"/>
-                                <exclude reference="K2l-i5-KQJ"/>
-                                <exclude reference="MSl-O4-Nsm"/>
-                                <exclude reference="c4c-NN-DQR"/>
-                                <exclude reference="eXN-LE-NQ1"/>
-                                <exclude reference="yRH-6b-gDa"/>
+                                <exclude reference="B8k-lq-8mm"/>
+                                <exclude reference="HLS-Yv-AQF"/>
+                                <exclude reference="RPQ-eU-P4b"/>
+                                <exclude reference="nBd-GV-yTO"/>
                                 <exclude reference="h5c-Ub-bFU"/>
                                 <exclude reference="qZi-Za-BXM"/>
                                 <exclude reference="0j6-CK-cbG"/>
                                 <exclude reference="Y4w-rm-xho"/>
                                 <exclude reference="jyg-lz-HSL"/>
                                 <exclude reference="kMG-W1-PXb"/>
+                                <exclude reference="21H-gs-cwv"/>
+                                <exclude reference="QiT-zi-0rp"/>
+                                <exclude reference="lRO-wR-xLW"/>
                                 <exclude reference="7lW-fR-7Bi"/>
                                 <exclude reference="b9f-wz-L1B"/>
-                                <exclude reference="B8k-lq-8mm"/>
-                                <exclude reference="HLS-Yv-AQF"/>
-                                <exclude reference="RPQ-eU-P4b"/>
-                                <exclude reference="nBd-GV-yTO"/>
+                                <exclude reference="K2l-i5-KQJ"/>
+                                <exclude reference="MSl-O4-Nsm"/>
+                                <exclude reference="c4c-NN-DQR"/>
+                                <exclude reference="eXN-LE-NQ1"/>
+                                <exclude reference="yRH-6b-gDa"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -123,26 +127,26 @@
                                 <include reference="FCh-r8-XXT"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="21H-gs-cwv"/>
-                                <include reference="QiT-zi-0rp"/>
-                                <include reference="lRO-wR-xLW"/>
-                                <include reference="K2l-i5-KQJ"/>
-                                <include reference="MSl-O4-Nsm"/>
-                                <include reference="c4c-NN-DQR"/>
-                                <include reference="eXN-LE-NQ1"/>
-                                <include reference="yRH-6b-gDa"/>
+                                <include reference="B8k-lq-8mm"/>
+                                <include reference="HLS-Yv-AQF"/>
+                                <include reference="RPQ-eU-P4b"/>
+                                <include reference="nBd-GV-yTO"/>
                                 <include reference="h5c-Ub-bFU"/>
                                 <include reference="qZi-Za-BXM"/>
                                 <include reference="0j6-CK-cbG"/>
                                 <include reference="Y4w-rm-xho"/>
                                 <include reference="jyg-lz-HSL"/>
                                 <include reference="kMG-W1-PXb"/>
+                                <include reference="21H-gs-cwv"/>
+                                <include reference="QiT-zi-0rp"/>
+                                <include reference="lRO-wR-xLW"/>
                                 <include reference="7lW-fR-7Bi"/>
                                 <include reference="b9f-wz-L1B"/>
-                                <include reference="B8k-lq-8mm"/>
-                                <include reference="HLS-Yv-AQF"/>
-                                <include reference="RPQ-eU-P4b"/>
-                                <include reference="nBd-GV-yTO"/>
+                                <include reference="K2l-i5-KQJ"/>
+                                <include reference="MSl-O4-Nsm"/>
+                                <include reference="c4c-NN-DQR"/>
+                                <include reference="eXN-LE-NQ1"/>
+                                <include reference="yRH-6b-gDa"/>
                             </mask>
                         </variation>
                     </view>

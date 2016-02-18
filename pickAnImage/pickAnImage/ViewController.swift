@@ -36,13 +36,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        topLabel.textAlignment = .Center
-        bottomLabel.textAlignment = .Center
+        self.topLabel.textAlignment = .Center
+        self.bottomLabel.textAlignment = .Center
         self.topLabel.delegate = self
         self.bottomLabel.delegate = self
 
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
 
     override func viewWillAppear(animated: Bool) {
         pickCamera.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
@@ -73,11 +74,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         presentViewController(imagePicker, animated: true, completion: nil)
     }
     
+   
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
     }
     
     
+    @IBAction func shareit(sender: UIBarButtonItem) {
+        let activityViewController = UIActivityViewController(
+            activityItems: [generateMemedImage()],
+            applicationActivities: nil)
+        presentViewController(activityViewController, animated: true, completion: nil)
+        activityViewController.completionWithItemsHandler = {
+            (s: String?, ok: Bool, items: [AnyObject]?, err:NSError?) -> Void in
+           let meme = Meme(text1: self.topLabel.text!,text2: self.bottomLabel.text!, image: self.pickAnImage.image, memedImage: self.generateMemedImage())
+        }
+    }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -128,13 +140,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         //self.dismissViewControllerAnimated(false, completion: nil)
         return memedImage
     }
+    struct Meme {
+        var text1 : String!
+        var text2 : String!
+        var image : UIImage!
+        var memedImage : UIImage!
+    }
     
-    
-    /*func save() {
+    /*func save()
+    {
         //Create the meme
-        let meme = Meme( text: bottomLabel.text!, image:
-            pickAnImage.image, memedImage: generateMemedImage())
+        let meme = Meme(text1: topLabel.text!,text2: bottomLabel.text!, image: pickAnImage.image, memedImage: generateMemedImage())
+
     }*/
+   
     
 }
 
