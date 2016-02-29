@@ -46,7 +46,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="TOP" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nz1-qP-edJ">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
@@ -54,7 +54,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="MemeMe" id="SOH-7f-6EC">
-                                        <barButtonItem key="leftBarButtonItem" title="Share" id="sdS-ee-dSI">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="sdS-ee-dSI">
                                             <connections>
                                                 <action selector="shareit:" destination="BYZ-38-t0r" id="y3s-WD-Zi8"/>
                                             </connections>
@@ -64,7 +64,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mMG-fM-Fa4" firstAttribute="top" secondItem="Nz1-qP-edJ" secondAttribute="bottom" constant="316" id="0j6-CK-cbG"/>
                             <constraint firstItem="FCh-r8-XXT" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="21H-gs-cwv"/>

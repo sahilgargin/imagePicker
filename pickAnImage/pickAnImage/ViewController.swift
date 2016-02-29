@@ -20,28 +20,31 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     let memeTextAttributes = [
-
-        NSStrokeColorAttributeName : UIColor.whiteColor(),
-        NSForegroundColorAttributeName : UIColor.whiteColor(),
-        NSFontAttributeName : UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-       // NSStrokeWidthAttributeName : 15.0
+        NSStrokeColorAttributeName : UIColor.blackColor(),
+        NSForegroundColorAttributeName :UIColor.whiteColor(),
+        NSFontAttributeName : UIFont( name:"HelveticaNeue-Bold", size: 40)!,
+        NSStrokeWidthAttributeName : -3.0
     ]
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.unsubscribeFromKeyboardNotifications()
+        unsubscribeFromKeyboardNotifications()
     }
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.topLabel.textAlignment = .Center
-        self.bottomLabel.textAlignment = .Center
-        self.topLabel.delegate = self
-        self.bottomLabel.delegate = self
-
+        textDesign(topLabel)
+        textDesign(bottomLabel)
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func textDesign(txtfld:UITextField)
+    {
+        txtfld.textAlignment = .Center
+        txtfld.delegate = self
+        
     }
     
 
@@ -54,9 +57,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func pickFromHere(sender: AnyObject) {
         
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        self.presentViewController(imagePicker, animated: true, completion: nil)
+        pickImageControl(imagePicker, src:"album")
+       
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
@@ -69,11 +71,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     @IBAction func pickAnImageCamera(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-        presentViewController(imagePicker, animated: true, completion: nil)
+        pickImageControl(imagePicker, src:"camera")
     }
     
+    func pickImageControl(iPick: UIImagePickerController, src:String!)
+    {
+        if(src == "album")
+        {
+            iPick.delegate = self
+            iPick.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        }
+        else
+        {
+            iPick.delegate = self
+            iPick.sourceType = UIImagePickerControllerSourceType.Camera
+        }
+
+         presentViewController(iPick, animated: true, completion: nil)
+
+    }
    
     func textFieldDidBeginEditing(textField: UITextField) {
         textField.text = ""
@@ -91,6 +107,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }
     }
     
+   
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true;
@@ -100,17 +118,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let userInfo = notification.userInfo!
         let keyboardSize = userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
         return keyboardSize.CGRectValue().height
+
         
     }
     
     func keyboardWillShow(notification: NSNotification)
     {
-        self.view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomLabel.isFirstResponder() {
+            self.view.frame.origin.y -= getKeyboardHeight(notification)
+        }
+        
 
     }
+    
+   
+
+
     func keyboardWillBeHidden(notification: NSNotification)
     {
-        self.view.frame.origin.y += getKeyboardHeight(notification)
+          if bottomLabel.isFirstResponder()
+          {
+            self.view.frame.origin.y += getKeyboardHeight(notification)
+        }
     }
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
